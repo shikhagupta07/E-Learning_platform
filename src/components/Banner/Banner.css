@@ -1,0 +1,80 @@
+/* Banner.css */
+
+.banner-section {
+    background-color: #ffffff;
+    padding: 60px 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .banner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  /* Text Section */
+  .banner-text {
+    flex: 1.2;
+    text-align: left;
+  }
+  
+  .banner-text h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+  }
+  
+  .banner-features {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    color: #34495e;
+  }
+  
+  .banner-features li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Image Section */
+  .banner-image {
+    flex: 0.9;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .banner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .banner-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .banner-text {
+      text-align: center;
+    }
+  
+    .banner-features {
+      text-align: center;
+    }
+  
+    .banner-image {
+      max-width: 80%;
+      margin-top: 2rem;
+    }
+  }
+  
