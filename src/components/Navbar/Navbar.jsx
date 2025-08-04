@@ -1,42 +1,32 @@
 import React, { useState } from 'react';
-import { IoMdMenu } from "react-icons/io";
+import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
+import { IoMdMenu } from 'react-icons/io';
 import './Navbar.css';
-
-
-const NavbarMenu = [
-  { id: 1, title: "Home", path: "/" },
-  { id: 2, title: "Services", path: "#" },
-  { id: 3, title: "About Us", path: "#" },
-  { id: 4, title: "Our Team", path: "#" },
-  { id: 5, title: "Contact Us", path: "#" }
-];
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleScroll = () => setMobileMenuOpen(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
         <div className="navbar-logo">
-          <h1 ><b>Edukate</b></h1>
+          <h1><b>Edukate</b></h1>
         </div>
 
-        {/* Desktop & Mobile Menu */}
         <ul className={`navbar-menu ${isMobileMenuOpen ? "active" : ""}`}>
-          {NavbarMenu.map((menu) => (
-            <li key={menu.id}>
-              <a href={menu.path}>{menu.title}</a>
-            </li>
-          ))}
-          <li>
-            <button className="primary-btn">Sign In</button>   
-          </li>
+          <li><ScrollLink to="home" smooth duration={500} onClick={handleScroll}>Home</ScrollLink></li>
+          <li><ScrollLink to="services" smooth duration={500} onClick={handleScroll}>Services</ScrollLink></li>
+          <li><ScrollLink to="about" smooth duration={500} onClick={handleScroll}>About Us</ScrollLink></li>
+          <li><ScrollLink to="team" smooth duration={500} onClick={handleScroll}>Our Team</ScrollLink></li>
+          <li><ScrollLink to="contact" smooth duration={500} onClick={handleScroll}>Contact Us</ScrollLink></li>
+          <li><Link to="/login" id='login' className="primary-btn" onClick={handleScroll}>Login/Signup</Link></li>
         </ul>
 
-        {/* Mobile Menu Icon */}
-        <button 
-          className="navbar-mobile-icon" 
+        <button
+          className="navbar-mobile-icon"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle navigation menu"
         >

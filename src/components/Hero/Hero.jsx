@@ -8,7 +8,6 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero-section">
-      <Navbar />
       <div className="hero-container container">
         {/* Text Section - Now on the Left */}
         <div className="hero-content">

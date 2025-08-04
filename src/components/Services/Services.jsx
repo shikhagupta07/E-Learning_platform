@@ -1,19 +1,15 @@
 import React from 'react';
-import './Services.css'; // Make sure to import the CSS
+import { Link } from 'react-router-dom';
+import './Services.css';
 
 const ServicesData = [
-  { id: 1, title: "9th & 10th", link: "#", icon: "📘", delay: 0.2 },
-  { id: 2, title: "11th & 12th", link: "#", icon: "📗", delay: 0.3 },
-  { id: 3, title: "JEE", link: "#", icon: "📐", delay: 0.4 },
-  { id: 4, title: "NEET", link: "#", icon: "🧬", delay: 0.5 },
-  { id: 5, title: "UPSC", link: "#", icon: "📜", delay: 0.6 },
-  { id: 6, title: "NDA", link: "#", icon: "🎖️", delay: 0.7 }
+  { id: 1, title: "9th & 10th", path: "9-10", icon: "📘" },
+  { id: 2, title: "11th & 12th", path: "11-12", icon: "📗" },
+  { id: 3, title: "JEE", path: "jee", icon: "📐" },
+  { id: 4, title: "NEET", path: "neet", icon: "🧬" },
+  { id: 5, title: "UPSC", path: "upsc", icon: "📜" },
+  { id: 6, title: "NDA", path: "nda", icon: "🎖️" }
 ];
-
-// Placeholder for animation logic
-const SlideLeft = (delay) => {
-  return {}; // you can integrate framer-motion or animation classes here
-};
 
 const Services = () => {
   return (
@@ -25,7 +21,7 @@ const Services = () => {
             <div className="service-card" key={service.id}>
               <div className="service-icon">{service.icon}</div>
               <h2 className="service-title">{service.title}</h2>
-              <a href={service.link} className="service-link">Explore →</a>
+              <Link to={`/explore/${service.path}`} className="service-link">Explore →</Link>
             </div>
           ))}
         </div>
